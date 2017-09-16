@@ -17,6 +17,10 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.veggieland.datastore.model.User;
 
+/**
+ * @author Ramesh Gadenaboina
+ *
+ */
 @Configuration
 @PropertySource("classpath:db/datasource.properties")
 @EnableTransactionManagement

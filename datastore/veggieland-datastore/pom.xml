@@ -39,12 +39,12 @@
 			<artifactId>spring-orm</artifactId>
 			<version>4.3.7.RELEASE</version>
 		</dependency>
-		<!-- Mysql Connector -->
+		<!-- Mysql Connector 
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>6.0.5</version>
-		</dependency>
+		</dependency> -->
 		<!-- Hibernate 5.2.9 Final -->
 		<dependency>
 			<groupId>org.hibernate</groupId>

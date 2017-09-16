@@ -13,8 +13,14 @@ import com.veggieland.datastore.model.User;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {AnnotationConfigApplicationContext context = 
+	
+	/*
+	 * JUnit not yet implemented
+	 * just for local testing
+	 */
+	
+    public static void main( String[] args ) {
+    AnnotationConfigApplicationContext context = 
     new AnnotationConfigApplicationContext(DatabaseConfig.class);
     
     User user = new User();
@@ -28,7 +34,7 @@ public class App
     user.setUserName("ramesh");
 
     UserService employeeService = context.getBean(UserService.class);
-    employeeService.createUser(user);
+    System.out.println(employeeService.createUser(user));
     
     }
 }
