@@ -10,6 +10,6 @@ public interface UserService {
 	
 	public Long createUser(User user);
 	
-	public Long updateUser(User user);
+	public String updateUser(User user);
 
 }

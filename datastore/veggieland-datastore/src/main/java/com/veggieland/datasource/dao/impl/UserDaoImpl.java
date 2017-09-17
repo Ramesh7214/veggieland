@@ -5,7 +5,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.veggieland.datasource.common.GenericDao;
 import com.veggieland.datasource.dao.UserDao;
-import com.veggieland.datasource.exceptions.VeggieDataException;
 import com.veggieland.datastore.model.User;
 
 /**
@@ -15,21 +14,23 @@ import com.veggieland.datastore.model.User;
 @Repository
 public class UserDaoImpl extends GenericDao implements UserDao {
 
+	@Override
 	@Transactional
 	public Long createUser(User user) {
 		return (Long) getCurrentSession().save(user);
 	}
 
 	@Override
-	public Long updateUser(User user) throws VeggieDataException {
+	@Transactional
+	public String updateUser(User user) {
 		try {
 			getCurrentSession().update(user);
+			return "SUCCESS";
 		} catch (Exception e) {
 			// need to be logged
-			throw new VeggieDataException("unable to udpate User Id :" + user.getId());
+			//throw new VeggieDataException("unable to udpate User Id :" + user.getId());
+			return "FAILED";
 		}
-
-		return null;
 
 	}
 }

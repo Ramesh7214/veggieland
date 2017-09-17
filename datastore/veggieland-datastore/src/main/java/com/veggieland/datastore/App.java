@@ -2,6 +2,7 @@ package com.veggieland.datastore;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.veggieland.datasource.service.ItemService;
 import com.veggieland.datasource.service.UserService;
 import com.veggieland.datastore.config.DatabaseConfig;
 import com.veggieland.datastore.model.User;
@@ -23,7 +24,7 @@ public class App
     AnnotationConfigApplicationContext context = 
     new AnnotationConfigApplicationContext(DatabaseConfig.class);
     
-    User user = new User();
+   /* User user = new User();
     user.setEmilId("ramesh7214@gmail.com");
     user.setFirstName("Ramesh");
     user.setLastName("Gadenaboina");
@@ -35,6 +36,13 @@ public class App
 
     UserService employeeService = context.getBean(UserService.class);
     System.out.println(employeeService.createUser(user));
+    
+    user.setPhoneNumber("929421545");
+    System.out.println(employeeService.updateUser(user));*/
+    
+    ItemService service = context.getBean(ItemService.class);
+    
+    System.out.println(service.getItems());
     
     }
 }

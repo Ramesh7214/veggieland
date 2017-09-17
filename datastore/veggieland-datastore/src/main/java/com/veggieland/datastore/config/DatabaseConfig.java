@@ -46,7 +46,7 @@ public class DatabaseConfig {
 
 		Properties props = new Properties();
 		props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
-		props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
+		//props.put("hibernate.hbm2ddl.auto", env.getProperty("hibernate.hbm2ddl.auto"));
 		props.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
 
 		factoryBean.setHibernateProperties(props);
