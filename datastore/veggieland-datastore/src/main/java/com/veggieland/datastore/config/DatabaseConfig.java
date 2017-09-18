@@ -15,6 +15,7 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.veggieland.datastore.model.Items;
 import com.veggieland.datastore.model.User;
 
 /**
@@ -51,6 +52,7 @@ public class DatabaseConfig {
 
 		factoryBean.setHibernateProperties(props);
 		factoryBean.setAnnotatedClasses(User.class);
+		factoryBean.setAnnotatedClasses(Items.class);
 		return factoryBean;
 	}
 

@@ -2,8 +2,7 @@ package com.veggieland.datasource.dao.impl;
 
 import java.util.List;
 
-import javax.persistence.criteria.CriteriaQuery;
-
+import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -17,10 +16,9 @@ public class ItemDaoImpl extends GenericDao implements ItemDao {
 	@Override
 	@Transactional
 	public List<Items> getItems() {
-		
-		CriteriaQuery criteria = getCurrentSession().getCriteriaBuilder().createQuery(Items.class);
-		criteria.from(Items.class);
-		return getCurrentSession().createQuery(criteria).getResultList();
+		Criteria criteria = getCurrentSession().createCriteria(Items.class);
+		List<Items> items = criteria.list();
+		return items;
 	}
 
 	@Override
