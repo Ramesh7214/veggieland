@@ -16,6 +16,7 @@ public class ItemDaoImpl extends GenericDao implements ItemDao {
 	@Override
 	@Transactional
 	public List<Items> getItems() {
+		//Criteria depricated? I dont know. will replace with suitable class
 		Criteria criteria = getCurrentSession().createCriteria(Items.class);
 		List<Items> items = criteria.list();
 		return items;
