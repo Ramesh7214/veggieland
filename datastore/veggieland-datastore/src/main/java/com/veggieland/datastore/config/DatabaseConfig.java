@@ -8,6 +8,7 @@ import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -25,7 +26,10 @@ import com.veggieland.datastore.model.User;
 @Configuration
 @PropertySource("classpath:db/datasource.properties")
 @EnableTransactionManagement
-@ComponentScan("com.veggieland.datasource")
+@ComponentScans(value = { 
+	      @ComponentScan("com.veggieland.datasource.dao.impl"),
+	      @ComponentScan("com.veggieland.datasource.service.impl")
+	    })
 public class DatabaseConfig {
 	@Autowired
 	private Environment env;

@@ -7,16 +7,13 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.ComponentScans;
 import org.springframework.context.annotation.Import;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.veggieland.datastore.config.DatabaseConfig;
 
 @SpringBootApplication
 @Import(DatabaseConfig.class)
-@EnableTransactionManagement
 @ComponentScans(value = { 
-	      @ComponentScan("com.veggieland.datastore"),
-	      @ComponentScan("com.veggieland.services") 
+	      @ComponentScan("com.veggieland.services.controller") 
 	    })
 public class VeggielandServicesApplication extends SpringBootServletInitializer{
 
@@ -28,5 +25,4 @@ public class VeggielandServicesApplication extends SpringBootServletInitializer{
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 		return application.sources(VeggielandServicesApplication.class);
 	}
-	
 }
