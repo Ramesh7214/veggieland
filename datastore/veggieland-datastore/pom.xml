@@ -57,20 +57,29 @@
 			<artifactId>commons-dbcp2</artifactId>
 			<version>2.1.1</version>
 		</dependency>
+		
+		<!-- fucking Oracle driver. why maven dont make it public? go through readMe.txt -->
+		
 		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc7</artifactId>
+			<version>12.1.0.1</version>
+		</dependency>
+		
+		<!-- <dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc</artifactId>
 			<version>7</version>
 			<scope>system</scope>
 			<systemPath>${basedir}/lib/ojdbc7.jar</systemPath> 
-		</dependency>
+		</dependency> -->
 		
 	</dependencies>
 
 	<build>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<plugins>
-		<plugin>
+		<!-- <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-war-plugin</artifactId>
             <configuration>
@@ -94,7 +103,7 @@
                     </resource>
                 </webResources>
             </configuration>
-        </plugin>
+        </plugin> -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.5.1</version>
